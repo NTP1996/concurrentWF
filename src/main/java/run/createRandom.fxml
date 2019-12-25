@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="run.CreateRandom">
+   <children>
+      <Button layoutX="155.0" layoutY="208.0" mnemonicParsing="false" onAction="#createStart" text="开始生成" />
+      <Label layoutX="39.0" layoutY="53.0" text="最小任务节点个数：" />
+      <Label layoutX="39.0" layoutY="86.0" text="最大任务节点个数：" />
+      <Label layoutX="39.0" layoutY="118.0" text="生成工作流个数：" />
+      <Label layoutX="39.0" layoutY="150.0" text="选择保存路径：" />
+      <TextField fx:id="minNum" layoutX="161.0" layoutY="49.0" />
+      <TextField fx:id="maxNum" layoutX="161.0" layoutY="82.0" />
+      <TextField fx:id="swfNumber" layoutX="161.0" layoutY="114.0" />
+      <TextField fx:id="directoryName" layoutX="161.0" layoutY="146.0" />
+      <Button layoutX="334.0" layoutY="146.0" mnemonicParsing="false" onAction="#selectSrc" text="..." />
+   </children>
+</AnchorPane>

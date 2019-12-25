@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdop:ObjectPool xmlns:cdol="http://cake.wi2.uni-trier.de/xml/cdol" xmlns:cdop="http://cake.wi2.uni-trier.de/xml/cdop" xmlns:rwfl="http://cake.wi2.uni-trier.de/xml/rwfl" xmlns:nest="http://cake.wi2.uni-trier.de/xml/nest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!--11111111111111111111111111-->
+	<rwfl:Workflow refID="Baked Spaghetti">
+		<rwfl:DataObjects>
+			<rwfl:DataflowWrapper refID="0">
+				<rwfl:DataflowElement>
+					<cdol:Agg c="DataflowElement">
+						<cdol:AA n="name" v="Parmesan"/>
+					</cdol:Agg>
+				</rwfl:DataflowElement>
+			</rwfl:DataflowWrapper>
+			<rwfl:DataflowWrapper refID="1">
+				<rwfl:DataflowElement>
+					<cdol:Agg c="DataflowElement">
+						<cdol:AA n="name" v="Butter"/>
+					</cdol:Agg>
+				</rwfl:DataflowElement>
+			</rwfl:DataflowWrapper>
+			<rwfl:DataflowWrapper refID="2">
+				<rwfl:DataflowElement>
+					<cdol:Agg c="DataflowElement">
+						<cdol:AA n="name" v="Green_pepper"/>
+					</cdol:Agg>
+				</rwfl:DataflowElement>
+			</rwfl:DataflowWrapper>
+			<rwfl:DataflowWrapper refID="3">
+				<rwfl:DataflowElement>
+					<cdol:Agg c="DataflowElement">
+						<cdol:AA n="name" v="Onion"/>
+					</cdol:Agg>
+				</rwfl:DataflowElement>
+			</rwfl:DataflowWrapper>
+			<rwfl:DataflowWrapper refID="4">
+				<rwfl:DataflowElement>
+					<cdol:Agg c="DataflowElement">
+						<cdol:AA n="name" v="Tomatoes"/>
+					</cdol:Agg>
+				</rwfl:DataflowElement>
+			</rwfl:DataflowWrapper>
+			<rwfl:DataflowWrapper refID="5">
+				<rwfl:DataflowElement>
+					<cdol:Agg c="DataflowElement">
+						<cdol:AA n="name" v="Mushrooms"/>
+					</cdol:Agg>
+				</rwfl:DataflowElement>
+			</rwfl:DataflowWrapper>
+			<rwfl:DataflowWrapper refID="6">
+				<rwfl:DataflowElement>
+					<cdol:Agg c="DataflowElement">
+						<cdol:AA n="name" v="Olives"/>
+					</cdol:Agg>
+				</rwfl:DataflowElement>
+			</rwfl:DataflowWrapper>
+			<rwfl:DataflowWrapper refID="7">
+				<rwfl:DataflowElement>
+					<cdol:Agg c="DataflowElement">
+						<cdol:AA n="name" v="Ground_beef"/>
+					</cdol:Agg>
+				</rwfl:DataflowElement>
+			</rwfl:DataflowWrapper>
+			<rwfl:DataflowWrapper refID="8">
+				<rwfl:DataflowElement>
+					<cdol:Agg c="DataflowElement">
+						<cdol:AA n="name" v="Sauce"/>
+					</cdol:Agg>
+				</rwfl:DataflowElement>
+			</rwfl:DataflowWrapper>
+			<rwfl:DataflowWrapper refID="9">
+				<rwfl:DataflowElement>
+					<cdol:Agg c="DataflowElement">
+						<cdol:AA n="name" v="Cheddar"/>
+					</cdol:Agg>
+				</rwfl:DataflowElement>
+			</rwfl:DataflowWrapper>
+			<rwfl:DataflowWrapper refID="10">
+				<rwfl:DataflowElement>
+					<cdol:Agg c="DataflowElement">
+						<cdol:AA n="name" v="Spaghetti"/>
+					</cdol:Agg>
+				</rwfl:DataflowElement>
+			</rwfl:DataflowWrapper>
+			<rwfl:DataflowWrapper refID="11">
+				<rwfl:DataflowElement>
+					<cdol:Agg c="DataflowElement">
+						<cdol:AA n="name" v="Pasta"/>
+					</cdol:Agg>
+				</rwfl:DataflowElement>
+			</rwfl:DataflowWrapper>
+			<rwfl:DataflowWrapper refID="12">
+				<rwfl:DataflowElement>
+					<cdol:Agg c="DataflowElement">
+						<cdol:AA n="name" v="Water"/>
+					</cdol:Agg>
+				</rwfl:DataflowElement>
+			</rwfl:DataflowWrapper>
+			<rwfl:DataflowWrapper refID="13">
+				<rwfl:DataflowElement>
+					<cdol:Agg c="DataflowElement">
+						<cdol:AA n="name" v="Mushroom_soup"/>
+					</cdol:Agg>
+				</rwfl:DataflowElement>
+			</rwfl:DataflowWrapper>
+			<rwfl:DataflowWrapper refID="14">
+				<rwfl:DataflowElement>
+					<cdol:Agg c="DataflowElement">
+						<cdol:AA n="name" v="Soup"/>
+					</cdol:Agg>
+				</rwfl:DataflowElement>
+			</rwfl:DataflowWrapper>
+		</rwfl:DataObjects>
+		
+		<rwfl:Sequence refID="0" status="READY">
+			<rwfl:Task refID="0" type="WORKLISTTASK" status="READY">
+				<rwfl:SemanticDescription>
+					<cdol:Agg c="TaskSemantic">
+						<cdol:AA n="name" v="Grate"/>
+						<cdol:AA n="SourceSentence" v="Grate parmesan."/>
+					</cdol:Agg>
+				</rwfl:SemanticDescription>
+				<rwfl:input>
+					<!--Parmesan-->
+					<rwfl:DataRef refID="0"/>
+				</rwfl:input>
+				<rwfl:output>
+					<!--Parmesan-->
+					<rwfl:DataRef refID="0"/>
+				</rwfl:output>
+			</rwfl:Task>
+			
+			<rwfl:Task refID="1" type="WORKLISTTASK" status="READY">
+				<rwfl:SemanticDescription>
+					<cdol:Agg c="TaskSemantic">
+						<cdol:AA n="name" v="Saute"/>
+						<cdol:AA n="SourceSentence" v="Saute butter,green pepper,onion."/>
+					</cdol:Agg>
+				</rwfl:SemanticDescription>
+				<rwfl:input>
+					<!--Butter-->
+					<rwfl:DataRef refID="1"/>
+					<!--Green_pepper-->
+					<rwfl:DataRef refID="2"/>
+					<!--Onion-->
+					<rwfl:DataRef refID="3"/>
+				</rwfl:input>
+				<rwfl:output>
+					<!--Green_pepper-->
+					<rwfl:DataRef refID="2"/>
+					<!--Onion-->
+					<rwfl:DataRef refID="3"/>
+				</rwfl:output>
+			</rwfl:Task>
+
+			
+			<rwfl:Task refID="2" type="WORKLISTTASK" status="READY">
+				<rwfl:SemanticDescription>
+					<cdol:Agg c="TaskSemantic">
+						<cdol:AA n="name" v="Mix"/>
+						<cdol:AA n="SourceSentence" v="Mix parmesan,mushroom soup,produce ."/>
+					</cdol:Agg>
+				</rwfl:SemanticDescription>
+				<rwfl:input>
+					<!--water-->
+					<rwfl:DataRef refID="12"/>
+					<!--Mushroom soup-->
+					<rwfl:DataRef refID="13"/>
+				</rwfl:input>
+				<rwfl:output>
+					<!--Soup-->
+					<rwfl:DataRef refID="14"/>
+				</rwfl:output>
+			</rwfl:Task>
+
+			<rwfl:Task refID="3" type="WORKLISTTASK" status="READY">
+				<rwfl:SemanticDescription>
+					<cdol:Agg c="TaskSemantic">
+						<cdol:AA n="name" v="Add"/>
+						<cdol:AA n="SourceSentence" v="add green pepper,onion,tomatoes,mushrooms,olives,...,produce sauce."/>
+					</cdol:Agg>
+				</rwfl:SemanticDescription>
+				<rwfl:input>
+					<!--Green_pepper-->
+					<rwfl:DataRef refID="2"/>
+					<rwfl:DataRef refID="3"/>
+					<rwfl:DataRef refID="4"/>
+					<rwfl:DataRef refID="5"/>
+					<rwfl:DataRef refID="6"/>
+					<rwfl:DataRef refID="7"/>
+				</rwfl:input>
+				<rwfl:output>
+					<!--Sauce-->
+					<rwfl:DataRef refID="8"/>
+				</rwfl:output>
+			</rwfl:Task>
+
+			<rwfl:Task refID="4" type="WORKLISTTASK" status="READY">
+				<rwfl:SemanticDescription>
+					<cdol:Agg c="TaskSemantic">
+						<cdol:AA n="name" v="Simmer"/>
+						<cdol:AA n="SourceSentence" v="simmer sauce."/>
+					</cdol:Agg>
+				</rwfl:SemanticDescription>
+				<rwfl:input>
+					<!--Sauce-->
+					<rwfl:DataRef refID="8"/>
+				</rwfl:input>
+				<rwfl:output>
+					<!--Sauce-->
+					<rwfl:DataRef refID="8"/>
+				</rwfl:output>
+			</rwfl:Task>
+			
+			<rwfl:Task refID="5" type="WORKLISTTASK" status="READY">
+				<rwfl:SemanticDescription>
+					<cdol:Agg c="TaskSemantic">
+						<cdol:AA n="name" v="Place"/>
+						<cdol:AA n="SourceSentence" v="Place, pepper and paprika."/>
+					</cdol:Agg>
+				</rwfl:SemanticDescription>
+				<rwfl:input>
+					<!--Sauce-->
+					<rwfl:DataRef refID="8"/>
+					<rwfl:DataRef refID="9"/>
+					<rwfl:DataRef refID="10"/>
+				</rwfl:input>
+				<rwfl:output>
+					<!--Spaghetti-->
+					<rwfl:DataRef refID="10"/>
+				</rwfl:output>
+			</rwfl:Task>
+			
+			<rwfl:Task refID="6" type="WORKLISTTASK" status="READY">
+				<rwfl:SemanticDescription>
+					<cdol:Agg c="TaskSemantic">
+						<cdol:AA n="name" v="Pour"/>
+						<cdol:AA n="SourceSentence" v="Pour, pepper and paprika."/>
+					</cdol:Agg>
+				</rwfl:SemanticDescription>
+				<rwfl:input>
+					<!--Spaghetti-->
+					<rwfl:DataRef refID="10"/>
+					<rwfl:DataRef refID="14"/>
+				</rwfl:input>
+				<rwfl:output>
+					<!--Pasta-->
+					<rwfl:DataRef refID="11"/>
+				</rwfl:output>
+			</rwfl:Task>
+			
+			<rwfl:Task refID="7" type="WORKLISTTASK" status="READY">
+				<rwfl:SemanticDescription>
+					<cdol:Agg c="TaskSemantic">
+						<cdol:AA n="name" v="Sprinkle"/>
+						<cdol:AA n="SourceSentence" v="Sprinkle with salt, pepper and paprika."/>
+					</cdol:Agg>
+				</rwfl:SemanticDescription>
+				<rwfl:input>
+					<!--Pasta-->
+					<rwfl:DataRef refID="11"/>
+					<!--Parmesan-->
+					<rwfl:DataRef refID="0"/>
+				</rwfl:input>
+				<rwfl:output>
+					<!--Pasta-->
+					<rwfl:DataRef refID="11"/>
+				</rwfl:output>
+			</rwfl:Task>
+			
+			<rwfl:Task refID="8" type="WORKLISTTASK" status="READY">
+				<rwfl:SemanticDescription>
+					<cdol:Agg c="TaskSemantic">
+						<cdol:AA n="name" v="Bake"/>
+						<cdol:AA n="SourceSentence" v="Season with salt, pepper and paprika."/>
+					</cdol:Agg>
+				</rwfl:SemanticDescription>
+				<rwfl:input>
+					<!--Pasta-->
+					<rwfl:DataRef refID="11"/>
+				</rwfl:input>
+				<rwfl:output>
+					<!--Pasta-->
+					<rwfl:DataRef refID="11"/>
+				</rwfl:output>
+			</rwfl:Task>
+		</rwfl:Sequence>
+	</rwfl:Workflow>
+</cdop:ObjectPool>
