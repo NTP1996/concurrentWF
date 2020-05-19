@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane prefHeight="261.0" prefWidth="490.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="run.TestCollectionToJinTao">
+  <children>
+    <Label layoutX="51.0" layoutY="54.0" text="测试目录路径：" />
+    <Label layoutX="51.0" layoutY="94.0" text="输出目录路径：" />
+    <Label layoutX="51.0" layoutY="136.0" text="数据结果导出路径：" />
+    <TextField fx:id="openDir" layoutX="189.0" layoutY="50.0" prefHeight="23.0" prefWidth="188.0" />
+    <TextField fx:id="outputDir" disable="true" layoutX="189.0" layoutY="90.0" prefHeight="23.0" prefWidth="188.0" />
+    <TextField fx:id="outputData" layoutX="189.0" layoutY="132.0" prefHeight="23.0" prefWidth="188.0" />
+    <Button layoutX="375.0" layoutY="132.0" mnemonicParsing="false" onAction="#selectData" text="..." />
+    <Button disable="true" layoutX="376.0" layoutY="90.0" mnemonicParsing="false" onAction="#selectOut" text="..." />
+    <Button layoutX="376.0" layoutY="50.0" mnemonicParsing="false" onAction="#selectOpen" text="..." />
+    <Button layoutX="180.0" layoutY="200.0" mnemonicParsing="false" onAction="#executeTest" text="开始测试" />
+  </children>
+</AnchorPane>
