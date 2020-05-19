@@ -131,11 +131,20 @@ public class WFStreamBuilder {
         while (appending == true) {
             appending = false;
             // for each stream
-            for (WFStream stream1 : streamContainer.getMergableWFStreams()) {
 
+            for (WFStream stream1 : streamContainer.getMergableWFStreams()) {
+                String info =stream1.getCaseId()+":";
+                for(WFStream stream: streamContainer.getStreamList())
+                    info += " "+stream.getCaseId();
+                System.out.println(info);
+                if (stream1.isProducerStream() || stream1.isJoined())
+                {
+                    continue;
+                }
                 LinkedList<WFStream> appendableStreams = new LinkedList<WFStream>();
                 // get all appendable streams
                 for (WFStream stream2 : streamContainer.getMergableWFStreams()) {
+                    System.out.println(stream1.getCaseId()+"----"+stream2.getCaseId()+"----?run");
                     if (isAppendable(stream1, stream2)) {
                         appendableStreams.add(stream2);
                     }

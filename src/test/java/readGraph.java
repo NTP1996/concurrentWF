@@ -7,7 +7,8 @@ public class readGraph {
     public static void main(String[] args) {
         //Baked_Spaghetti-SW-B01
         //Fettuccine_Primavera-SW02
-        SWFGraph swf = ParseSWFXML.getSWF("C:/Users/NTP/Desktop/workspace/IDEA/SWPR/测试用例/Fettuccine_Primavera-SW02.xml");
+        //SWB02改
+        SWFGraph swf = ParseSWFXML.getSWF("C:/Users/NTP/Desktop/workspace/IDEA/SWPR/测试用例/SWB02改.xml");
 
         SWFBuildGraph swfbuild = new SWFBuildGraph(swf);
         SWFNewGraph g = swfbuild.build();

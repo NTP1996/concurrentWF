@@ -37,20 +37,17 @@ public class WFStreamContainer {
     }
     public void print(){
         for(WFStream stream: streamList){
-            stream.print();
+            if (!stream.isJoined())
+                stream.print();
         }
     }
 
-    public LinkedList<WFStream> getMergableWFStreams() {
-        LinkedList<WFStream> mergableWfStreams = new LinkedList<WFStream>();
-
-        for (WFStream stream : streamList) {
-            if (!stream.isProducerStream() ) {
-                mergableWfStreams.add(stream);
-            }
-        }
-
-        return mergableWfStreams;
+    public ArrayList<WFStream> getMergableWFStreams() {
+//        ArrayList<WFStream> mergableStream = new ArrayList<>();
+//        for(WFStream stream: this.streamList){
+//            if(!stream.isJoined())
+//        }
+        return this.streamList;
     }
 
     public boolean consecutivelyStreams(WFStream preStream,
@@ -58,7 +55,7 @@ public class WFStreamContainer {
 
         //todo 这里get(0)很有可能有问题
         Set<WFStream> preStreams = getAllPreStreams(postStream
-                .getTaskNodeList().get(0));
+                .getLastTaskNode());
 
         if (preStreams.contains(preStream)) {
             return true;
@@ -110,14 +107,6 @@ public class WFStreamContainer {
     public void appendStreams(WFStream preStream,
                               LinkedList<WFStream> appendableStreams) {
 
-        //2020.5.19
-
-        //         将 postStream 加入到 preStream 前(preStream<--postStream)
-//        ArrayList<SWFDataNode> preStreamOut = new ArrayList<>();
-//        preStreamOut.addAll(preStream.getStreamOutputDataNodeList());
-//        preStream.clear();
-
-//        preStream.addSplitAfterTask(preStream.getLastTaskNode());  这里可能有问题
 
         for (WFStream appendStream : appendableStreams) {
             //append mergeStream to stream and update all stream information
@@ -126,21 +115,7 @@ public class WFStreamContainer {
 //                preStream.addTaskAndData(task);
             }
 
-//            appendStream.getStreamInputDataNodeList().removeAll(preStreamOut);
-//            appendStream.getInputDataNodeList().removeAll(preStreamOut);
-//
-//            for (SWFDataNode dataNode : appendStream.getOutputDataNodeList()) {
-//                preStream.addOutputDataNode(dataNode);
-//            }
-//
-//
-//            for (SWFDataNode dataNode : appendStream.getInputDataNodeList()) {
-//                preStream.addInputDataNode(dataNode);
-//            }
-//
-//            for (SWFDataNode dataNode : appendStream.getStreamOutputDataNodeList()) {
-//                preStream.addStreamOutputDataNode(dataNode);
-//            }
+
 
             if(appendStream.isConsumerStream()) {
                 preStream.setIsConsumerStream(true);
@@ -148,9 +123,8 @@ public class WFStreamContainer {
             if(appendStream.isProducerStream()) {
                 preStream.setIsProducerStream(true);
             }
-
             appendStream.setJoined(true);
-            remove(appendStream);
+//            remove(appendStream);
         }
 
     }
