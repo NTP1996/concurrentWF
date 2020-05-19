@@ -26,7 +26,7 @@ public class WFStreamBuilder {
         this.streamContainer.addStream(stream);
         //遍历工作流，找到 stream 并加入到 streamContainer
         buildingFragmemts(stream,startnode);
-
+//        streamContainer.print();
         streamContainer.removeEmpty();
         this.appendStreams();
         return streamContainer;

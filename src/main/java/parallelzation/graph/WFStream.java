@@ -38,6 +38,17 @@ public class WFStream extends BaseGraph {
         }
     }
 
+    public void clear(){
+        this.inputDataNodeList.clear();
+        this.outputDataNodeList.clear();
+        this.streamOutputDataNodeList.clear();
+        this.streamInputDataNodeList.clear();
+        this.isConsumerStream = false;
+        this.isProducerStream = false;
+        this.taskNodeList.clear();
+        this.isJoined = false;
+    }
+
     public void addOutputDataNode(SWFDataNode node){
         outputDataNodeList.add(node);
         // 同 addInputDataNode

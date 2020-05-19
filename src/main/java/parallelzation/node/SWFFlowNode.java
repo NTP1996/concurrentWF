@@ -49,8 +49,8 @@ public class SWFFlowNode extends SWFNode implements Comparable<SWFFlowNode>{
         for(SWFFlowNode nextNode: nextNodeList){
             preNodeList.add(nextNode);
             preNodeList.addAll(nextNode.getallPreviousNodes());
-            if(this instanceof SWFControlNode && ((SWFControlNode) nextNode).getOneType().equals(ControlNodeType.SPLIT))
-                break;
+//            if(this instanceof SWFControlNode && ((SWFControlNode) nextNode).getOneType().equals(ControlNodeType.SPLIT))
+//                break;
         }
         return preNodeList;
     }

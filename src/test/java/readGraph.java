@@ -7,15 +7,13 @@ public class readGraph {
     public static void main(String[] args) {
         //Baked_Spaghetti-SW-B01
         //Fettuccine_Primavera-SW02
-        SWFGraph swf = ParseSWFXML.getSWF("C:/Users/NTP/Desktop/workspace/IDEA/SWPR/测试用例/Baked_Spaghetti-SW-B01.xml");
+        SWFGraph swf = ParseSWFXML.getSWF("C:/Users/NTP/Desktop/workspace/IDEA/SWPR/测试用例/Fettuccine_Primavera-SW02.xml");
 
         SWFBuildGraph swfbuild = new SWFBuildGraph(swf);
         SWFNewGraph g = swfbuild.build();
         WFStreamBuilder streamBuilder  = new WFStreamBuilder();
         WFStreamContainer wfStreamContainer = streamBuilder.building(g);
         wfStreamContainer.print();
-
-
 
 
 

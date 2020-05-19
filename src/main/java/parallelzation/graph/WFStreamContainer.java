@@ -110,24 +110,37 @@ public class WFStreamContainer {
     public void appendStreams(WFStream preStream,
                               LinkedList<WFStream> appendableStreams) {
 
-        // 将 postStream 加入到 preStream 前(preStream-->postStream)
-        preStream.clearStreamOutput();
+        //2020.5.19
+
+        //         将 postStream 加入到 preStream 前(preStream<--postStream)
+//        ArrayList<SWFDataNode> preStreamOut = new ArrayList<>();
+//        preStreamOut.addAll(preStream.getStreamOutputDataNodeList());
+//        preStream.clear();
+
 //        preStream.addSplitAfterTask(preStream.getLastTaskNode());  这里可能有问题
+
         for (WFStream appendStream : appendableStreams) {
             //append mergeStream to stream and update all stream information
             for (SWFTaskNode task : appendStream.getTaskNodeList()) {
-                preStream.addTaskNode(task);
-            }
-            for (SWFDataNode dataNode : appendStream.getStreamInputDataNodeList()) {
-                preStream.addInputDataNode(dataNode);
-            }
-            for (SWFDataNode dataNode : appendStream.getOutputDataNodeList()) {
-                preStream.addOutputDataNode(dataNode);
+                preStream.addTaskAndData(task);
+//                preStream.addTaskAndData(task);
             }
 
-            for (SWFDataNode dataNode : appendStream.getStreamOutputDataNodeList()) {
-                preStream.addStreamOutputDataNode(dataNode);
-            }
+//            appendStream.getStreamInputDataNodeList().removeAll(preStreamOut);
+//            appendStream.getInputDataNodeList().removeAll(preStreamOut);
+//
+//            for (SWFDataNode dataNode : appendStream.getOutputDataNodeList()) {
+//                preStream.addOutputDataNode(dataNode);
+//            }
+//
+//
+//            for (SWFDataNode dataNode : appendStream.getInputDataNodeList()) {
+//                preStream.addInputDataNode(dataNode);
+//            }
+//
+//            for (SWFDataNode dataNode : appendStream.getStreamOutputDataNodeList()) {
+//                preStream.addStreamOutputDataNode(dataNode);
+//            }
 
             if(appendStream.isConsumerStream()) {
                 preStream.setIsConsumerStream(true);
