@@ -45,7 +45,7 @@ public class WFStreamContainer {
         LinkedList<WFStream> mergableWfStreams = new LinkedList<WFStream>();
 
         for (WFStream stream : streamList) {
-            if (!stream.isProducerStream() && !stream.isConsumerStream()) {
+            if (!stream.isProducerStream() ) {
                 mergableWfStreams.add(stream);
             }
         }
