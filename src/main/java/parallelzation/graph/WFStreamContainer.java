@@ -125,7 +125,7 @@ public class WFStreamContainer {
                 preStream.addOutputDataNode(dataNode);
             }
 
-            for (SWFDataNode dataNode : appendStream.getOutputDataNodeList()) {
+            for (SWFDataNode dataNode : appendStream.getStreamOutputDataNodeList()) {
                 preStream.addStreamOutputDataNode(dataNode);
             }
 
@@ -136,7 +136,6 @@ public class WFStreamContainer {
                 preStream.setIsProducerStream(true);
             }
 
-            /** the nest graph to be extracted **/
             appendStream.setJoined(true);
             remove(appendStream);
         }

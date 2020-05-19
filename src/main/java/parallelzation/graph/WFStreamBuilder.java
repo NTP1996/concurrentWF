@@ -63,9 +63,9 @@ public class WFStreamBuilder {
                 this.streamContainer.addStream(stream);
                 stream.setIsConsumerStream(true);
             } else {
-
                 if (!stream.isInitStream()) {
                     if (!dataflowConnected(stream, taskNode)) {
+//                        System.out.println("出现这句话，请注意查看--01");
                         stream = new WFStream();
                         streamContainer.addStream(stream);
                     }
@@ -107,7 +107,8 @@ public class WFStreamBuilder {
     private boolean isConsumer(WFStream stream,SWFTaskNode taskNode){
         for (SWFDataNode dataNode: taskNode.getInputNodeList()){
             for (WFStream wfStream: this.streamContainer.getStreamList()){
-                if(wfStream.getStreamOutputDataNodeList().contains(dataNode)&& !stream.getStreamOutputDataNodeList().contains(dataNode))
+                if(wfStream.getStreamOutputDataNodeList().contains(dataNode)
+                        && !stream.getStreamOutputDataNodeList().contains(dataNode))
                     return true;
             }
         }
@@ -171,17 +172,26 @@ public class WFStreamBuilder {
             return false;
         }
 
-        // the stream consumes a data object that is not produced by the stream
-        for (SWFDataNode inputDataNode : inputDataNodes) {
-            if (!outputDataNodes.contains(inputDataNode)) {
-                return false;
-            }
+        // 若 stream2 input 中有一个是由stream1 产生的,就可以合并。
+        if (!hasIntersection(inputDataNodes,outputDataNodes)) {
+            return false;
         }
-//        if (streamContainer.consecutivelyStreams(stream1, stream2) && !stream1.isJoined() && !stream2.isJoined()) {
-        if (streamContainer.consecutivelyStreams(stream1, stream2)) {
+
+        if (streamContainer.consecutivelyStreams(stream1, stream2) && !stream1.isJoined() && !stream2.isJoined()) {
             return true;
         }
         return false;
+    }
+
+    private boolean hasIntersection(ArrayList<SWFDataNode> a,ArrayList<SWFDataNode> b){
+        ArrayList<SWFDataNode> list = new ArrayList<>();
+        list = (ArrayList<SWFDataNode>) a.clone();
+        list.retainAll(b);
+        if(list.size()>0){
+            return  true;
+        }else {
+            return false;
+        }
     }
 
 }
